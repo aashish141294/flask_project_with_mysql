@@ -1,0 +1,127 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+
+<div class="modal-dialog">
+    <div class="modal-content" style=" width: 900px;margin-left: -200PX; background-image: url(static/images/bg6.jpg);">
+        <div class="modal-header">
+            <h4 class="modal-title " style="text-align:center; font-family: bold; font-size: xx-large;margin-left:250px">USER REGISTRATION</h4>
+        </div>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="form-group row col-lg-12">
+                    <label class="col-lg-2 form-control-label">First Name <span style="color: red;">*</span> </label>
+                <div class="col-lg-4">
+                    <input required class="form-control" name="first_name" value="" placeholder="Enter Your First Name">
+            
+                </div>
+                    <label class="col-lg-2 form-control-label">Last Name<span style="color: red;">*</span></label>
+                <div class="col-lg-4">
+                    <input required class="form-control" name="last_name" value="" type="text" placeholder="Enter your Last Name">
+
+                </div>
+            </div>
+                <div class="form-group row col-lg-12"></div>
+                <div class="form-group row col-lg-12">
+                    <label class="col-lg-2 form-control-label">Email <span style="color: red;">*</span> </label>
+                <div class="col-lg-4">
+                    <input required class="form-control" name="email" value="" placeholder="Enter Your Login ID">
+            
+                </div>
+                    <label class="col-lg-2 form-control-label">Password<span style="color: red;">*</span></label>
+                <div class="col-lg-4">
+                    <input required class="form-control" name="password1" value="" type="password" placeholder="Enter your Password">
+
+                </div>
+            </div>
+            <div class="form-group row col-lg-12">
+                <label class="col-lg-2 form-control-label">Confirm Password
+                <span style="color: red;">*</span></label>
+            <div class="col-lg-4">
+                <input required class="form-control" name="password2" value="" type="password" placeholder="Enter your Password">
+                
+            </div>
+                <label class="col-lg-2 form-control-label">Gender<span style="color: red;">*</span> </label>
+            <div class="col-lg-4">
+                <select required class="form-control" name="gender">
+                    <option value="" >--select gender--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            </div>
+            <div class="form-group row col-lg-12">
+                <label class="col-lg-2 form-control-label">Country<span style="color: red;">*</span></label>
+            <div class="col-lg-4">
+                <select required name="country" id="country" size="1" >
+                  <option name="country" selected="selected" >
+                    -- Select Country --
+                  </option>
+                </select>
+              </div>
+              <label class="col-lg-2 form-control-label"
+                >&nbsp;&nbsp;&nbsp;State<span style="color: red">*</span></label
+              >
+              <div class="col-lg-4">
+                <select required name="state" id="state" size="1" >
+                  <option name="state"  selected="selected" >
+                    -- Select State --
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row col-lg-12">
+                <label class="col-lg-2 form-control-label">City<span style="color: red;">*</span></label>
+            <div class="col-lg-4">
+                <select required name="city" id="city" size="1" >
+                  <option name="city"  selected="selected" >
+                    -- Select City --
+                  </option>
+                </select>
+              </div>
+              <label class="col-lg-2 form-control-label"
+                >&nbsp;&nbsp;&nbsp;Zip<span style="color: red">*</span></label
+              >
+              <div class="col-lg-4">
+                <select required name="zip" id="zip" size="1" >
+                  <option name="zip"  selected="selected">
+                    -- Select Zip --
+                  </option>
+                </select>
+
+              </div>
+            </div>
+            <div class="row col-lg-12">
+              <label class="col-lg-2 form-control-label">Area of Intrest<span style="color: red;">*</span></label>
+              <div class="col-md-4">
+                <label><input type="checkbox" name='check' class="get_value" value="reading"> Reading</label>
+                <label> <input type="checkbox" name='check' class="get_value" value="traveling"> Traveling</label>
+                <label><input type="checkbox" name='check' class="get_value" value="playing"> Playing</label>
+                <label><input type="checkbox" name='check' class="get_value" value="teaching"> Teaching</label>
+                <h4 id="result"></h4>
+              </div>
+              <label class="col-lg-2 form-control-label">Upload File<span style="color: red;">*</span></label>
+              <div class="col-md-4">
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+              </div>
+            </form>
+            </div>
+
+            <div class="row col-lg-12">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <button name="submit" id="submit" type="submit" class="btn btn-success form-control">Save</button>
+                </div>
+            <div class="col-md-2">
+                <a href="/" class="btn btn-primary form-control">Reset</a>
+            </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

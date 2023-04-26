@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<br>
+<br>
+{% if all_user|length == 0%}
+
+
+<div class="alert alert-dark" role="alert">
+   No records found.
+</div>
+{% else %}
+<table border="1" width="50%">
+
+        <div id="timeout" align="center" >  
+            {% if message %}
+                <p style="color:red;font-size: x-large;">{{ form.message }}</p>
+            {% endif %}
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-sm table-bordered table-hover table-responsive-sm">
+                        <thead class="thead-dark">
+                        <th scope="row">S.No</th>
+                        <th scope="row" style="width: 140px">FIRST NAME</th>
+                        <th scope="row" style="width: 140px">LAST NAME</th>
+                        <th scope="row">EMAIL</th>
+                        <th scope="row">GENDER</th>
+                        <th scope="row">COUNTRY</th>
+                        <th scope="row">STATE</th>
+                        <th scope="row">CITY</th>
+                        <th scope="row">ZIP</th>
+                        <th scope="row" style="width: 180px">AREA OF INTREST</th>
+                        <th scope="row">IMAGE</th>
+                        <th scope="row">EDIT</th>
+                        </thead>
+                        {% for user in all_user %}
+                        <tbody>
+                            <td>{{loop.index}}</td>
+                            <td>{{ user.first_name }}</td>
+                            <td>{{ user.last_name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.gender }}</td>
+                            <td>{{ user.country }}</td>
+                            <td>{{ user.state }}</td>
+                            <td>{{ user.city }}</td>
+                            <td>{{ user.zip }}</td>
+                            <td id='myParagraph'>{{ user.area_of_intrest |replace('[','') |replace(']','') }}</td>
+                            <td><img src="/static/uploads/{{user.file_name}}" style="width:50px;height:50px;"></td>
+                            <td>
+                                <a type='button' href="/delete/{{user.id}}" >Delete
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a type='button' href="/update/{{user.id}}" >Edit
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+{% endif %}
+{% endblock %}

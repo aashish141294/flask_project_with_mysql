@@ -1,0 +1,5 @@
+Python 3.11.2
+flask - pip install flask
+flask-SQLAlchemy - pip install flask-SQLAlchemy
+mysql - pip install Flask-MySQL
+mysql connector - pip install mysql-connector-python
